@@ -9,8 +9,9 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <app-root #appComponent></app-root>
   <!--routineTest.-->
-  <liste-collegues></liste-collegues>
+  <un-collegue *ngFor="let collegueVue of collegues" [collegue]="collegueVue"></un-collegue>
+  <app-liste [infos]="appComponent" ></app-liste>
 </body>
 </html>
