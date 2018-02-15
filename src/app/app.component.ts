@@ -7,11 +7,11 @@ templateUrl: './app.component.html',
 styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-	collegues:Collegue[];
-	affichageSubmit:string = 'hidden';
+	collegues : Collegue [];
+	affichageSubmit : string = 'hidden';
 	ngOnInit() {
-	// TODO alimenter le tableau de collègues avec 5 collègues possédant des scores variés
-		this.collegues=[new Collegue('Lars','http://www.fightersgeneration.com/nz4/char/tekken7/dragnov-tekken7-render-official.png',100),
+		console.log("tto");
+		this.collegues=[new Collegue('Dragunov','http://www.fightersgeneration.com/nz4/char/tekken7/dragnov-tekken7-render-official.png',100),
 		new Collegue('Lei','http://vignette3.wikia.nocookie.net/tekkenpedia/images/b/b8/Lei_Wulong_T5DR_CG_Infobox.png/revision/latest/scale-to-width-down/300?cb=20150528122824&path-prefix=fr',120),
 		new Collegue('Law','http://www.fightersgeneration.com/nz4/char/tekken7/law-tekken7-render-official.png',83),
 		new Collegue('Nina','https://cdn1.vox-cdn.com/thumbor/UPsYNbkxgL4LR8fzT8ILX_kU260=/cdn0.vox-cdn.com/uploads/chorus_asset/file/5969717/tekken_7_nina_artwork.0.jpg',76),
@@ -21,15 +21,11 @@ export class AppComponent implements OnInit {
 	}
 
     add(pseudo:HTMLInputElement, imageUrl: HTMLInputElement) {
-
-		// TODO ajouter au tableau un nouveau collègue
-		// TODO vider les champs de saisie
-
 		this.collegues.push(new Collegue(pseudo.value,imageUrl.value,100));
 		pseudo.value="";
 		imageUrl.value="";
 		this.affichageSubmit = 'visible';
-		return false; // pour éviter le rechargement de la page
+		return false; 
 	}
 
 }

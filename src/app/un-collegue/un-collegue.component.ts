@@ -10,12 +10,16 @@ export class UnCollegueComponent{
 
   @Input() collegue:Collegue;
 
-  constructor() { }
+  constructor() {
+   
+  }
 
   jaime() {
     this.collegue.changeNote(10);
   }
+
   jedeteste() {
     this.collegue.changeNote(-5);
   }
+  
 }
