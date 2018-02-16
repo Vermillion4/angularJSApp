@@ -1,0 +1,18 @@
+<nav>
+  <ngb-tabset>
+      <a routerLink="./classique">
+        <ngb-tab routerLink="/classique" routerLinkActive="active-link" title="Classique">
+        <ng-template ngbTabContent>Liste</ng-template>
+      </ngb-tab></a>
+      <a routerLink="./tableau">
+        <ngb-tab routerLink="/tableau" routerLinkActive="active-link" title="Tableau">
+          <ng-template ngbTabContent>Tab</ng-template>
+        </ngb-tab>
+      </a>
+      <a routerLink="./carrousel">
+        <ngb-tab  routerLink="/carrousel" routerLinkActive="active-link" title="Carrousel">
+          <ng-template ngbTabContent>Car</ng-template>
+        </ngb-tab>
+      </a>
+  </ngb-tabset>
+</nav>

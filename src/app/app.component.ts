@@ -1,17 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+//import { } from '@angular/core/src/metadata/lifecycle_hooks';
+import { ListeComponent } from './collegues/liste/liste.component';
+import { TableauComponent } from './collegues/tableau/tableau.component';
+import { CarrouselComponent } from './collegues/carrousel/carrousel.component';
+import { DetailComponent } from './collegues/detail/detail.component';
+
+/**
+ * Static content :
+ */
+import { HeaderComponent } from './static/header/header.component';
+import { FooterComponent } from './static/footer/footer.component';
+import { RouterModule, Routes } from '@angular/router';
+
+/**
+ * Métier
+ */
 import { Collegue } from './shared/domain/collegue';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+
+/** Gestion de l'affichage */
+import { UnCollegueComponent } from './un-collegue/un-collegue.component';
+
 @Component({
-selector: 'app-root',
-templateUrl: './app.component.html',
-styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-	collegues : Collegue [];
+
+	static collegues : Collegue [];
 	affichageSubmit : string = 'hidden';
 	ngOnInit() {
-		console.log("tto");
-		this.collegues=[new Collegue('Dragunov','http://www.fightersgeneration.com/nz4/char/tekken7/dragnov-tekken7-render-official.png',100),
+		AppComponent.collegues=[new Collegue('Dragunov','http://www.fightersgeneration.com/nz4/char/tekken7/dragnov-tekken7-render-official.png',100),
 		new Collegue('Lei','http://vignette3.wikia.nocookie.net/tekkenpedia/images/b/b8/Lei_Wulong_T5DR_CG_Infobox.png/revision/latest/scale-to-width-down/300?cb=20150528122824&path-prefix=fr',120),
 		new Collegue('Law','http://www.fightersgeneration.com/nz4/char/tekken7/law-tekken7-render-official.png',83),
 		new Collegue('Nina','https://cdn1.vox-cdn.com/thumbor/UPsYNbkxgL4LR8fzT8ILX_kU260=/cdn0.vox-cdn.com/uploads/chorus_asset/file/5969717/tekken_7_nina_artwork.0.jpg',76),
@@ -21,11 +41,12 @@ export class AppComponent implements OnInit {
 	}
 
     add(pseudo:HTMLInputElement, imageUrl: HTMLInputElement) {
-		this.collegues.push(new Collegue(pseudo.value,imageUrl.value,100));
+
+		AppComponent.collegues.push(new Collegue(pseudo.value,imageUrl.value,100));
+
 		pseudo.value="";
 		imageUrl.value="";
 		this.affichageSubmit = 'visible';
 		return false; 
 	}
-
 }

@@ -1,5 +1,5 @@
-<h1>Top Collègues</h1>
-<h3>Les meilleurs collègues du moment</h3>
+<app-header></app-header>
+<app-nav></app-nav>
 <form class="container-fluid">
 	<div class="row">
 		<label for="pseudo" class="col-1 col-offset-1">Pseudo</label>
@@ -14,4 +14,6 @@
 <p class="col-12" [style.visibility]="affichageSubmit">Le collègue {{pseudo.value}} a été ajouté avec succès.</p>
 <!-- Solution bootstrap :class="hidden" mais sans? -->
 <!-- ICI VOTRE FORMULAIRE  {{collegues | json}}-->
-<un-collegue *ngFor="let collegueVue of collegues" [collegue]="collegueVue"></un-collegue>
+
+<router-outlet></router-outlet>
+

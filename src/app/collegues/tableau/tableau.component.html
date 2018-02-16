@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr class="row">
+      <th class="col-3">Image</th>
+      <th class="col-3">Pseudo</th>
+      <th class="col-3">Score</th>
+      <th class="col-3">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="row" *ngFor="let collegue of collegues">
+        <td class="col-3"><img src="{{collegue.urlImg}}"></img></td>
+        <td class="col-3">{{collegue.nom}}</td>
+        <td class="col-3">{{collegue.score}}</td>
+        <td class="col-3"><buttonsCollegue [pseudo]="collegue.nom"></buttonsCollegue></td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>

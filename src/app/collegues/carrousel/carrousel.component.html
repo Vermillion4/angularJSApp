@@ -1,0 +1,9 @@
+<ngb-carousel class="flex align-items-center">
+    <ng-template *ngFor="let collegue of collegues" ngbSlide>
+      <img src="{{collegue.urlImg}}" >
+      <div class="carousel-caption">
+          <h3>{{collegue.nom}}</h3>
+          <buttonsCollegue [pseudo]="collegue.nom"></buttonsCollegue>
+      </div>
+    </ng-template>
+</ngb-carousel>
