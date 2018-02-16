@@ -1,1 +1,1 @@
-<un-collegue *ngFor="let collegueInfos of collegues" [collegue]="collegueInfos"></un-collegue>
+<un-collegue [ngClass]="{'row':afficheRow(0)}" *ngFor="let collegueInfos of collegues;" [collegue]="collegueInfos"></un-collegue>

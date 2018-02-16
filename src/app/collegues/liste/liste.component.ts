@@ -10,13 +10,16 @@ import { UnCollegueComponent } from '../../un-collegue/un-collegue.component';
 })
 export class ListeComponent implements OnInit {
 
-  collegues:UnCollegueComponent[];
-  @Input() infos:AppComponent;
+   collegues:Collegue[];//@Input()
+  
   constructor(){
-    this.collegues=this.infos.collegues.map(collegue=>new UnCollegueComponent());
+    this.collegues=AppComponent.collegues;
   }
 
   ngOnInit() {
   }
 
+  afficheRow(index:number):boolean{
+    return index==0%3;
+  }
 }
