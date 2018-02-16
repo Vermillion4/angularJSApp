@@ -35,5 +35,4 @@ export class CollegueService {
     detesterUnCollegue(unCollegue:string):Promise<Collegue> {
         return this.http.patch<Collegue>("http://localhost:8008/collegues/"+unCollegue,unCollegue).toPromise().catch(undefined); 
     }
-
 }

@@ -14,12 +14,15 @@ export class ListeComponent implements OnInit {
   
   constructor(){
     this.collegues=AppComponent.collegues;
+
   }
 
   ngOnInit() {
   }
 
+
   afficheRow(index:number):boolean{
     return index==0%3;
   }
+
 }

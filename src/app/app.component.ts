@@ -27,6 +27,7 @@ import { UnCollegueComponent } from './un-collegue/un-collegue.component';
 	styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
 	static collegues : Collegue [];
 	affichageSubmit : string = 'hidden';
 	ngOnInit() {
@@ -40,7 +41,9 @@ export class AppComponent implements OnInit {
 	}
 
     add(pseudo:HTMLInputElement, imageUrl: HTMLInputElement) {
+
 		AppComponent.collegues.push(new Collegue(pseudo.value,imageUrl.value,100));
+
 		pseudo.value="";
 		imageUrl.value="";
 		this.affichageSubmit = 'visible';

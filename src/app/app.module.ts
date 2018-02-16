@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+
 import { RouterModule, Routes } from '@angular/router';
 
 /**
  * Composant principal :
  */
+
 import { AppComponent } from './app.component';
 
 /**
@@ -14,6 +16,7 @@ import { AppComponent } from './app.component';
  */
 import { UnCollegueComponent } from './un-collegue/un-collegue.component';
 import { Collegue } from './shared/domain/collegue';
+
 
 /**
  * Elements d'affichage dynamiques
@@ -63,15 +66,20 @@ const appRoutes: Routes = [
     NavDetailComponent,
     ButtonsCollegueComponent,
     DefaultComponent
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+
     NgbModule.forRoot(),
     //RouterModule.forRoot(appRoutes)
     RouterModule.forRoot(defaultRoutes)
   ],
     providers: [CollegueService],
+	  NgbModule.forRoot()
+  ],
+  providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

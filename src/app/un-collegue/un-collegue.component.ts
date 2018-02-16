@@ -11,7 +11,6 @@ export class UnCollegueComponent{
   @Input() collegue:Collegue;
 
   constructor() {
-  
   }
 
   jaime() {
