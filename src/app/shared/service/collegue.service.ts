@@ -10,13 +10,13 @@ export class CollegueService {
     }
 
     listerCollegues():Promise<Collegue[]> {
-        return  this.http.get<Collegue[]>("http://localhost:8008/collegues").toPromise().catch(undefined);
+        return  this.http.get<Collegue[]>("http://localhost:8080/collegues").toPromise().catch(undefined);
     }
 
     trouverCollegue(nom:string):Promise<Collegue> {
         let resultat;//undefined.
         try{
-            resultat=this.http.get<Collegue>("http://localhost:8008/collegues").toPromise()
+            resultat=this.http.get<Collegue>("http://localhost:8080/collegues").toPromise()
             .then((collegue:Collegue)=>{if(collegue.nom==nom){return collegue;}});
         }catch(e){
             resultat=undefined;
@@ -25,15 +25,15 @@ export class CollegueService {
     }
 
     sauvegarder(newCollegue:Collegue):Promise<Collegue> {
-        return this.http.post<Collegue>("http://localhost:8008/collegues",newCollegue).toPromise().catch(undefined);
+        return this.http.post<Collegue>("http://localhost:8080/collegues",newCollegue).toPromise();
     }
 
     aimerUnCollegue(unCollegue:string):Promise<Collegue> {
-        return this.http.patch<Collegue>("http://localhost:8008/collegues/"+unCollegue,unCollegue).toPromise().catch(undefined); 
+        return this.http.patch<Collegue>("http://localhost:8080/collegues/"+unCollegue,unCollegue).toPromise(); 
     }
 
     detesterUnCollegue(unCollegue:string):Promise<Collegue> {
-        return this.http.patch<Collegue>("http://localhost:8008/collegues/"+unCollegue,unCollegue).toPromise().catch(undefined); 
+        return this.http.patch<Collegue>("http://localhost:8080/collegues/"+unCollegue,unCollegue).toPromise(); 
     }
 
 }

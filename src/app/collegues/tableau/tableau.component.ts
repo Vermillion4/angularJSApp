@@ -12,7 +12,7 @@ export class TableauComponent implements OnInit {
   constructor() {
     this.collegues=AppComponent.collegues;
   }
-
+  
   ngOnInit() {
     
   }

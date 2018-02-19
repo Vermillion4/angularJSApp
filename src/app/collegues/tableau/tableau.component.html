@@ -1,3 +1,4 @@
+<app-visuel-tris #vis></app-visuel-tris>
 <table>
   <thead>
     <tr class="row">
@@ -8,10 +9,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="row" *ngFor="let collegue of collegues">
-        <td class="col-3"><img src="{{collegue.urlImg}}"></img></td>
+    <tr class="row" ng-model="collegue" *ngFor="let collegue of collegues | slice:0:vis.limite | selectFirstLetter:vis.debut">
+        <td class="col-3" width="120px" height="80px"><img src="{{collegue.urlImg}}" width="70%"/></td>
         <td class="col-3">{{collegue.nom}}</td>
-        <td class="col-3">{{collegue.score}}</td>
+        <td class="col-3" [innerHTML]="collegue.note | colorScore"></td>
         <td class="col-3"><buttonsCollegue [pseudo]="collegue.nom"></buttonsCollegue></td>
     </tr>
   </tbody>

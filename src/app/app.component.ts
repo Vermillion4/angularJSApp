@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 //import { } from '@angular/core/src/metadata/lifecycle_hooks';
 import { ListeComponent } from './collegues/liste/liste.component';
@@ -24,7 +24,8 @@ import { UnCollegueComponent } from './un-collegue/un-collegue.component';
 @Component({
 	selector: 'app-root',
 	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+	styleUrls: ['./app.component.css'],
+	changeDetection:ChangeDetectionStrategy.Default
 })
 export class AppComponent implements OnInit {
 	static collegues : Collegue [];

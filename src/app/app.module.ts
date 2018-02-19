@@ -33,6 +33,11 @@ import { NavDetailComponent } from './navigation/nav-detail/nav-detail.component
 import { ButtonsCollegueComponent } from './static/buttons-collegue/buttons-collegue.component';
 import { DefaultComponent } from './pages/default/default.component';
 import { CollegueService } from './shared/service/collegue.service';
+import { VisuelTrisComponent } from './visuel-tris/visuel-tris.component';
+import { SelectFirstLetterPipe } from './visuel-tris/select-first-letter.pipe';
+import { ScorePipe } from './visuel-tris/score.pipe';
+import { ColorScorePipe } from './visuel-tris/color-score.pipe';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [  
     { path: 'classique', component: DefaultComponent,data: { vue:  ListeComponent } }, 
@@ -62,14 +67,19 @@ const appRoutes: Routes = [
     NavComponent,
     NavDetailComponent,
     ButtonsCollegueComponent,
-    DefaultComponent
+    DefaultComponent,
+    VisuelTrisComponent,
+    SelectFirstLetterPipe,
+    ScorePipe,
+    ColorScorePipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgbModule.forRoot(),
     //RouterModule.forRoot(appRoutes)
-    RouterModule.forRoot(defaultRoutes)
+    RouterModule.forRoot(defaultRoutes),
+    FormsModule
   ],
     providers: [CollegueService],
     bootstrap: [AppComponent]
